@@ -167,7 +167,8 @@ table {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 15px;
-  background-color: #624DE3;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(23%, #22c1c3), color-stop(52%, #5a2dfd), to(#37c5d9));
+  background: linear-gradient(0deg, #22c1c3 23%, #5a2dfd 52%, #37c5d9 100%);
 }
 
 html {
@@ -292,6 +293,8 @@ a {
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
+  position: relative;
+  z-index: 10;
 }
 
 .btn-item:hover {
@@ -357,10 +360,10 @@ a {
 }
 
 .article__img {
-  padding: 0  0 59.6%  0;
-  -webkit-transform: translateY(10.1%);
-      -ms-transform: translateY(10.1%);
-          transform: translateY(10.1%);
+  padding: 0  0 67.6%  0;
+  -webkit-transform: translateY(15.1%);
+      -ms-transform: translateY(15.1%);
+          transform: translateY(15.1%);
 }
 
 .cards__inner {
@@ -687,6 +690,7 @@ a {
   width: 100%;
   background-color: #fff;
   z-index: 90;
+  position: absolute;
   border-bottom: 1px solid grey;
 }
 
@@ -972,7 +976,7 @@ a {
     -webkit-transform: translateX(-100%);
         -ms-transform: translateX(-100%);
             transform: translateX(-100%);
-    background: #624de3;
+    background: #1d4182;
     overflow: auto;
   }
 
@@ -1021,7 +1025,6 @@ a {
     font-size: 19px;
     color: white;
     width: 100%;
-    text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 2px;
   }
@@ -1146,7 +1149,7 @@ a {
 
   .article__inner {
     text-align: left;
-    padding: 100px 0 80px 0;
+    padding: 180px 0 110px 0;
   }
 
   .article__title {
