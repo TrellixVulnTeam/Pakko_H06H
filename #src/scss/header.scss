@@ -1,0 +1,144 @@
+.header {
+    width: 100%;
+    background-color: $bg1;
+    z-index: 90;
+    // .header__row
+    border-bottom: 1px solid grey;
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    // .header__img
+
+    &__img {
+        position: relative;
+        z-index: 900000;
+        transition: $Tobject $speed $Tstyle;
+        cursor: pointer;
+    }
+
+    // .header__nav
+
+    &__nav {
+    }
+    @media (max-width:$burgerbp) {
+        z-index: 1000000;
+        position: fixed;
+    }
+   
+}
+
+.nav {
+
+    // .nav__list
+    transition: $Tobject $speed $Tstyle;
+    &__list {
+        display: flex;
+        align-items: center;
+        button{
+            font-size: 14px;
+            line-height: 24px;
+            color: $color2;
+            padding: 12px 24px;
+            &:hover{
+                border: 1px solid $transcolor;
+                color: $transcolor;
+            }
+        }
+        li+li{
+            margin: 0 0 0 20px;
+        }
+    }
+
+    // .nav__link
+
+    &__link {
+        transition: $Tobject $speed $Tstyle;
+        font-size: 16px;
+        line-height: 24px;
+        color: $maincolor;
+        &:hover{
+            color: $transcolor;
+        }
+    
+    }
+    &.active{
+        transform: translateX(0%);
+    }
+    @media (max-width:$burgerbp) {
+
+        position: fixed;
+        z-index: 100;
+        left: 0;
+        bottom: -20px;
+        top: 0;
+        right: 62%;
+         padding: 79px 20px ;
+         transform: translateX(-100%);
+         background: rgba(98,77,227,1);
+        
+        overflow: auto;
+        &__list {
+            
+           
+            align-items: start;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 100%;
+            overflow: auto;
+        
+            li+li{
+                margin:  0 0 0px;
+               
+            }
+            li{
+                padding: 20px 0;
+                border-bottom: 1px solid grey;
+                width: 100%;
+                &:last-child{
+                    border: 0;
+                }
+            }
+
+            
+        
+
+        }
+        button{
+            font-size: 14px;
+            line-height: 24px;
+            color: $color2;
+            padding: 12px 24px;
+            background-color:#9a8dee ;
+            &:hover{
+                border: 1px solid $transcolor;
+                color: $transcolor;
+            }
+        }
+
+
+        &__link{
+            font-size: 19px;
+            color: white;
+            width: 100%;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+            &:hover{
+                color: rgb(247, 206, 213);
+            }
+        }
+    }
+
+    @media (max-width:600px) {
+        right: 41%;
+    }
+    @media (max-width:$md3) {
+        right: 30%;
+    }
+   
+}
+
