@@ -104,12 +104,14 @@ a{
 .article {
     width: 100%;
     background-color:$maincolor;
+    
     &__inner {
         margin: 0 auto;
         max-width: 674px;
         text-align: center;
         color: $color2;
         padding: 152px 0 0 0;
+      
     }
     &__title {
         font-size: 55px;
@@ -152,7 +154,7 @@ a{
 
     @media (max-width:700px) {
         &__inner{
-            padding: 240px 0 150px 0;
+            padding: 181px 0 0px 0;
         }
         &__title {
             font-size: 45px;
@@ -167,8 +169,6 @@ a{
             margin: 26px 0 0 0;
         }
         &__img {
-            padding: 0  0 0  0;
-            transform: translateY(5.1%);
             margin:0% 00 0 0;
         }
     }
@@ -177,7 +177,7 @@ a{
 
         &__inner{
             text-align: left;
-            padding: 180px 0 110px 0;
+            
         }
         &__title {
             font-size: 48px;
@@ -189,18 +189,27 @@ a{
         }
         &__btn {
             &+&{
-                margin: 10px 0 0 10px  ;
+                margin: 10px 0 0 0;
+            }
+            &:first-child{
+                margin: 0 15px 0 0  ;
             }
         }
     }
     @media (max-width:380px) {
-        
-      
-        &__btn {
-            &+&{
-                margin: 10px 0 0 0  ;
-            }
+        &__control {
+            margin: 27px 0 0 0;
         }
+    }
+    @media (max-width:370px) {
+        &__inner{
+            padding: 100px 0 85px 0;
+        }
+        &__img {
+            padding: 0; 
+            margin:0% 00 0 0;
+        }
+
     }
 
 }
@@ -231,17 +240,19 @@ a{
         padding: 64% 0 0 0;
     }
     &__body {
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-        grid-column-gap:40px ;
         width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     
     }
     &__item{
         border-radius: 8px;
         transition: $Tobject $speed $Tstyle;
-     
-     
+        width: 33.333%;
+        &+&{
+            margin: 0 0 0 40px;
+        }
         &:hover{
             
             box-shadow: 0 0 20px rgba($color: #624DE3, $alpha: .5);
@@ -344,13 +355,18 @@ a{
         }
     }
     @media (max-width:1100px) {
-        &__body {
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            grid-column-gap:20px ;
-            width: 100%;
+        &__item{
+            border-radius: 8px;
+            transition: $Tobject $speed $Tstyle;
+            width: 33.333%;
+            &+&{
+                margin: 0 0 0 20px;
+            }
+         
         
+       
         }
+
         &__price {
             &__num{
                 font-size: 40px;
@@ -369,14 +385,22 @@ a{
     
     }
     @media (max-width:$md1){
-        &__body {
-            display: grid;
-            grid-template-columns: repeat(2,1fr);
-            grid-column-gap:20px ;
-            grid-row-gap: 40px;
-            width: 100%;
-        
+        &__body{
+            flex-wrap: wrap;
+            justify-content: space-around;
         }
+        &__item{
+            border-radius: 8px;
+            transition: $Tobject $speed $Tstyle;
+            width: 45.333%;
+            &+&{
+                margin: 0 0 0 0px;
+            }
+            &:last-child{
+                margin: 30px 0 0 0;
+            }
+        }
+        
     }
    
    
@@ -389,9 +413,20 @@ a{
         }
         &__body {
            
-            grid-template-columns: repeat(1,75%);
-            justify-content: center;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: center;
          
+        }
+        
+        &__item{
+            width: 75%;
+            &+&{
+                margin: 30px 0 0 0px;
+            }
+            // &:last-child{
+            //     margin: 0px 0 0 0px;
+            // }
         
         }
         &__title {
@@ -399,11 +434,19 @@ a{
             margin: 0 0 60px 0;
         }
     }
+
+
+
     @media (max-width:$md3){
-        &__body {
-            display: grid;
-            grid-template-columns: repeat(1,1fr);
-            justify-content: center;
+      
+        &__item{
+            width: 100%;
+            &+&{
+                margin: 30px 0 0 0px;
+            }
+            // &:last-child{
+            //     margin: 0px 0 0 0px;
+            // }
         
         }
         &__price {
